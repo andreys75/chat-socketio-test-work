@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chat</title>
+  </head>
+  <body>
+    <h1>Test</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script>
+      // cross origin version
+      const socket = io("ws://35.157.80.184:8080/");
+      console.log(socket);
+      socket.on("connected", (data) => {
+        console.log("connected", data);
+      });
+      socket.on("connect", (data) => {
+        console.log("connect", data);
+      });
+      socket.on("message", (data) => {
+        console.log(data);
+      });
+      socket.emit("connect", { user: "Andrey" });
+      socket.emit("message", "my new message");
+    </script>
+  </body>
+</html>
