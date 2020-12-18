@@ -1,0 +1,64 @@
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "chat"
+    "form";
+  max-width: 650px;
+  margin: auto;
+  row-gap: 10px;
+}
+
+header {
+  grid-area: "header";
+  margin-left: 10px;
+}
+
+form {
+  grid-area: "form";
+}
+
+#messages {
+  grid-area: "chat";
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  min-width: 200px;
+  max-width: 600px;
+  padding: 10px;
+  background-color: bisque;
+  max-height: 500px;
+  height: 350px;
+  overflow-y: auto;
+}
+#messages p {
+  margin-right: 20%;
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 20px;
+}
+.self-user {
+  align-self: flex-end;
+  text-align: right;
+  margin-right: 10px !important;
+  margin-left: 20%;
+  border-color: #ccc !important;
+  background-color: #ddd !important;
+}
+
+#user-name {
+  width: 100px;
+  max-width: 20%;
+}
+#user-message {
+  width: 70%;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 10px;
+}
